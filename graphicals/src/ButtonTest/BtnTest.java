@@ -47,7 +47,9 @@ public class BtnTest {
 				String password = jp.getText();
 				
 				if(username.equals("test") && password.equals("test")) {
-					this.dashboard();
+					//this.dashboard();
+					new DashboardMenu();
+					j.dispose();
 				}else {
 					JOptionPane.showMessageDialog(b,"login failed");
 				}
@@ -56,12 +58,6 @@ public class BtnTest {
 				b.setText("clicked");
 			}
 
-			private void dashboard() {
-				JFrame s = new JFrame();
-				s.setSize(400, 500);
-				s.setLayout(null);
-				s.setVisible(true);
-			}
 		});
 		
 		j.setLayout(null);
