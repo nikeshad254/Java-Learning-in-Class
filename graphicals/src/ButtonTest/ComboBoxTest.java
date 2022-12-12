@@ -38,7 +38,6 @@ public class ComboBoxTest implements ActionListener{
 
 	public static void main(String[] args) {
 		new ComboBoxTest();
-
 	}
 	
 	public void actionPerformed(ActionEvent e) {
