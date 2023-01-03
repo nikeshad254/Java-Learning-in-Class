@@ -10,6 +10,7 @@ public class SwitchExample {
 		case 'o':
 		case 'u':
 			str = "vowel letter";
+			break;
 			
 		default:
 			str = "not a vowel";
