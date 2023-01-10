@@ -22,7 +22,7 @@ class SimpleCalculator{
             "4", "5", "6",
             "1", "2", "3",
             "0", "+", "-",
-            "X", "/", "="};
+            "*", "/", "="};
 	
 	public void Calculate() {
 		if(!hasOpt) {
@@ -79,23 +79,8 @@ class SimpleCalculator{
 	         }else if (command.charAt(0) >= '0' && command.charAt(0) <= '9' && hasOpt) {
 				num2 = Integer.parseInt(command);
 				inp1.setText(num1 + " "+ optr + " "+ num2);
-			}else if(command.charAt(0) == '+'){
-				hasOpt = true;
-				optr = '+';
-				inp1.setText(num1 + " "+ optr + " ");
-			}else if(command.charAt(0) == '-'){
-				hasOpt = true;
-				optr = '-';
-				inp1.setText(num1 + " "+ optr + " ");
-			}else if(command.charAt(0) == '/'){
-				hasOpt = true;
-				optr = '/';
-				inp1.setText(num1 + " "+ optr + " ");
-			}else if(command.charAt(0) == 'X'){
-				hasOpt = true;
-				optr = '*';
-				inp1.setText(num1 + " "+ optr + " ");
-			}else if(command.charAt(0) == '='){
+			}
+			else if(command.charAt(0) == '='){
 				try {
 					Calculate();
 					
@@ -107,6 +92,11 @@ class SimpleCalculator{
 					num2 = 0;
 					hasOpt = false;
 				}
+			}
+			else {
+				optr = command.charAt(0);
+				hasOpt = true;
+				inp1.setText(num1 + " "+ optr + " ");
 			}
  
 		 }
