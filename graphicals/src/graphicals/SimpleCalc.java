@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.SwingConstants;
 import javax.swing.JLabel;
+import java.awt.GridLayout;
 
 public class SimpleCalc extends JFrame {
 
@@ -20,6 +21,7 @@ public class SimpleCalc extends JFrame {
 	private JTextField numTwo;
 	private JLabel lblSign;
 	private JLabel lblAns;
+	private JLabel label;
 	
 	/**
 	 * Launch the application.
@@ -49,19 +51,24 @@ public class SimpleCalc extends JFrame {
 		mainFrame.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(mainFrame);
-		mainFrame.setLayout(null);
+		mainFrame.setLayout(new GridLayout(0, 4, 0, 0));
+		
+		lblSign = new JLabel("");
+		lblSign.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		mainFrame.add(lblSign);
 		
 		numOne = new JTextField();
+		numOne.setText("none");
 		numOne.setFont(new Font("Tahoma", Font.BOLD, 14));
-		numOne.setBounds(8, 8, 30, 30);
 		mainFrame.add(numOne);
-		numOne.setColumns(10);
+		numOne.setColumns(20);
 		
-		numTwo = new JTextField();
-		numTwo.setFont(new Font("Tahoma", Font.BOLD, 14));
-		numTwo.setColumns(10);
-		numTwo.setBounds(82, 8, 30, 30);
-		mainFrame.add(numTwo);
+		lblAns = new JLabel("=  noOperation");
+		lblAns.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		mainFrame.add(lblAns);
+		
+		label = new JLabel("");
+		mainFrame.add(label);
 		
 		JButton btnPlus = new JButton("+");
 		btnPlus.addActionListener(new ActionListener() {
@@ -75,7 +82,6 @@ public class SimpleCalc extends JFrame {
 		});
 		
 		btnPlus.setFont(new Font("Tahoma", Font.BOLD, 8));
-		btnPlus.setBounds(8, 64, 40, 40);
 		mainFrame.add(btnPlus);
 		
 		JButton btnMinus = new JButton("-");
@@ -90,7 +96,6 @@ public class SimpleCalc extends JFrame {
 		});
 		btnMinus.setHorizontalAlignment(SwingConstants.RIGHT);
 		btnMinus.setFont(new Font("Tahoma", Font.BOLD, 10));
-		btnMinus.setBounds(72, 64, 40, 40);
 		mainFrame.add(btnMinus);
 		
 		JButton btnMultiply = new JButton("X");
@@ -104,7 +109,6 @@ public class SimpleCalc extends JFrame {
 			}
 		});
 		btnMultiply.setFont(new Font("Tahoma", Font.BOLD, 9));
-		btnMultiply.setBounds(136, 64, 40, 40);
 		mainFrame.add(btnMultiply);
 		
 		JButton btnDivide = new JButton("/");
@@ -118,17 +122,11 @@ public class SimpleCalc extends JFrame {
 			}
 		});
 		btnDivide.setFont(new Font("Tahoma", Font.BOLD, 10));
-		btnDivide.setBounds(202, 64, 40, 40);
 		mainFrame.add(btnDivide);
 		
-		lblSign = new JLabel("");
-		lblSign.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblSign.setBounds(56, 7, 28, 30);
-		mainFrame.add(lblSign);
-		
-		lblAns = new JLabel("=  noOperation");
-		lblAns.setFont(new Font("Tahoma", Font.PLAIN, 14));
-		lblAns.setBounds(136, 8, 106, 30);
-		mainFrame.add(lblAns);
+		numTwo = new JTextField();
+		numTwo.setFont(new Font("Tahoma", Font.BOLD, 14));
+		numTwo.setColumns(10);
+		mainFrame.add(numTwo);
 	}
 }
